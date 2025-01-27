@@ -1,9 +1,7 @@
-### Tecnologias utilizadas
+
 <p>
   
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg"  width="48" height="48"  />
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"  width="48" height="48"  />
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/socketio/socketio-original-wordmark.svg"   width="48" height="48" />
+Site foi feito, utilizando NodeJS e Banco de dados MYSQL.
                     
           
 
