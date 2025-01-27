@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enquetes</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="votacao.js" type="module" defer></script>
+  </head>
+  <body>
+    <div class="header">
+      <div class="site-title">
+        <span style="color: black">V</span><span style="color: green">ota</span
+        ><span style="color: black">Q</span
+        ><span style="color: green">uest</span>
+      </div>
+
+      <div class="menu-container">
+        <a href="./index.html" class="menu-btn" style="text-decoration: none"
+          >Enquetes</a
+        >
+        <a href="./editar.html" class="menu-btn" style="text-decoration: none"
+          >Minhas Enquetes</a
+        >
+        <a href="./enquetes.html" class="menu-btn" style="text-decoration: none"
+          >Criar Enquetes</a
+        >
+      </div>
+      <button class="menu-btn logout-btn">LogOut</button>
+    </div>
+    <div class="conteudo">
+      <a href="#" id="arrowLeft" class="arrow arrow-left">&#8592;</a>
+      <div class="form-container">
+        <h1>Qual a melhor praia?</h1>
+        <p id="data-enquete"></p>
+        <form id="enqueteForm">
+          <div id="optionsContainer">
+            <!-- Opções para votar uma VQ, geradas dinamicamente via JS -->
+          </div>
+        </form>
+      </div>
+      <a href="#" id="arrowRight" class="arrow arrow-right">&#8594;</a>
+    </div>
+  </body>
+</html>

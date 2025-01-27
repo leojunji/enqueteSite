@@ -1,0 +1,69 @@
+create database votaquest;
+
+CREATE TABLE enquete (
+    id INT AUTO_INCREMENT PRIMARY KEY,  
+    titulo VARCHAR(255) NOT NULL,       
+    data_inicio DATETIME NOT NULL,      
+    data_fim DATETIME NOT NULL,        
+    disponivel BOOLEAN DEFAULT TRUE     
+);
+
+DELIMITER $$
+
+CREATE TRIGGER atualizar_disponibilidade
+BEFORE INSERT ON enquete
+FOR EACH ROW
+BEGIN
+    IF CURRENT_TIMESTAMP BETWEEN NEW.data_inicio AND NEW.data_fim THEN
+        SET NEW.disponivel = TRUE;
+    ELSE
+        SET NEW.disponivel = FALSE;
+    END IF;
+END $$
+
+DELIMITER ;
+
+
+
+CREATE TABLE opcoes (
+    id INT AUTO_INCREMENT PRIMARY KEY,            
+    descricao_opcao VARCHAR(255) NOT NULL,         
+    id_enquete INT NOT NULL,
+    votos INT DEFAULT 0,                      
+    FOREIGN KEY (id_enquete) REFERENCES enquete(id) 
+);
+
+
+INSERT INTO enquete (titulo, data_inicio, data_fim, disponivel) VALUES
+('VQ 1: Qual sua cor favorita?', '2025-01-25 10:00:00', '2025-02-05 18:00:00', TRUE),
+('VQ 2: Qual é o seu filme preferido?', '2025-01-25 10:00:00', '2025-02-05 18:00:00', TRUE),
+('VQ 3: Qual sua comida favorita?', '2025-01-25 10:00:00', '2025-02-05 18:00:00', TRUE),
+('VQ 4: Qual esporte você mais gosta?', '2025-01-25 10:00:00', '2025-02-05 18:00:00', TRUE),
+('VQ 5: Qual é a sua estação do ano favorita?', '2025-01-25 10:00:00', '2025-02-05 18:00:00', TRUE),
+('VQ 6: Qual é o seu time de futebol?', '2025-01-25 10:00:00', '2025-02-05 18:00:00', TRUE),
+('VQ 7: Você acha que o voto nulo deve ser considerado?', '2025-01-25 10:00:00', '2025-02-05 18:00:00', TRUE);
+
+
+
+INSERT INTO opcoes (descricao_opcao, id_enquete) VALUES
+('Azul', 1),
+('Verde', 1),
+('Vermelho', 1),
+('Ação', 2),
+('Comédia', 2),
+('Drama', 2),
+('Pizza', 3),
+('Sushi', 3),
+('Hambúrguer', 3),
+('Futebol', 4),
+('Basquete', 4),
+('Vôlei', 4),
+('Verão', 5),
+('Outono', 5),
+('Inverno', 5),
+('Flamengo', 6),
+('Vasco', 6),
+('Palmeiras', 6),
+('Sim', 7),
+('Não', 7),
+('Indiferente', 7);

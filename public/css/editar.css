@@ -1,0 +1,156 @@
+@import url("vars.css");
+
+body {
+  font-family: var(--fonte);
+  background-color: var(--cor-de-fundo);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--cor-de-fundo-clara);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.site-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.menu-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.menu-btn {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #7f27ff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.menu-btn:hover {
+  background-color: #170133;
+}
+
+.logout-btn {
+  background-color: #ff4c4c;
+}
+
+.logout-btn:hover {
+  background-color: #cc0000;
+}
+
+h1 {
+  margin-top: 6rem;
+  text-align: center;
+}
+
+.form-container {
+  background: var(--cor-de-fundo);
+  padding: 2rem;
+  border-radius: 24px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  max-width: 30rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input[type="text"] {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.form-group input[type="text"]:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.options-container {
+  margin-bottom: 20px;
+}
+
+.btn-deletar {
+  margin-top: 1rem;
+  padding: 10px;
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  color: #fff;
+  background-color: #7f27ff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn {
+  margin-top: 1rem;
+  padding: 10px;
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  color: #fff;
+  background-color: #7f27ff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: #170133;
+}
+
+.inline-btn-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.inline-btn-container .btn {
+  width: 48%;
+  margin: 0;
+}
+
+.navigators {
+  margin-bottom: 10px;
+}
+
+.inline-btn-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.inline-btn-container .btn {
+  width: 48%;
+  margin: 0;
+}
